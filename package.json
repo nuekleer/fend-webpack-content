@@ -12,8 +12,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "eslint": "^7.1.0",
+    "eslint-loader": "^4.0.2",
     "express": "^4.17.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.3.0"
   }
 }
