@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
@@ -15,6 +16,32 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: "babel-loader"
             }
+=======
+const path = require('path') 
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+    mode: 'development',
+    entry: './src/client/index.js',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
+    module: {
+        rules: [
+                {
+            test: '/\.js$/',
+            exclude: /node_modules/,
+            loader: "babel-loader"
+                },
+                {
+                    test: /\.scss$/,
+                    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                }
+>>>>>>> f447e2e1d81602036a4e7cfa56772df2d6855936
         ]
     },
     plugins: [
@@ -30,6 +57,13 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
+<<<<<<< HEAD
         })
     ]
 }
+=======
+    }),
+    new BundleAnalyzerPlugin()
+    ]
+}
+>>>>>>> f447e2e1d81602036a4e7cfa56772df2d6855936
